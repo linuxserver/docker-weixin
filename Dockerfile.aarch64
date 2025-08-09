@@ -24,14 +24,30 @@ RUN \
     tint2 && \
   echo "**** install weixin ****" && \
   curl -o \
-    /tmp/weixin.deb -L \
-    "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_arm64.deb" && \
-  apt-get install -y \
-    /tmp/weixin.deb && \
+    /tmp/weixin.app -L \
+    "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_arm64.AppImage" && \
+  cd /tmp && \
+  chmod +x weixin.app && \
+  ./weixin.app --appimage-extract && \
+  mv \
+    squashfs-root \
+    /opt/weixin && \
   echo "**** application tweaks ****" && \
   mv \
     /usr/bin/chromium \
     /usr/bin/chromium-real && \
+  ln -s \
+    /opt/weixin/AppRun \
+    /usr/bin/wechat && \
+  cp \
+    /opt/weixin/wechat.png \
+    /usr/share/icons/hicolor/48x48/apps/ && \
+  cp \
+    /opt/weixin/wechat.desktop \
+    /usr/share/applications/ && \
+  sed -i \
+    's/AppRun/wechat/g' \
+    /usr/share/applications/wechat.desktop && \
   echo "**** cleanup ****" && \
   apt-get clean && \
   rm -rf \
@@ -43,6 +59,6 @@ RUN \
 COPY /root /
 
 # ports and volumes
-EXPOSE 3000
+EXPOSE 3001
 
 VOLUME /config
