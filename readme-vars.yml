@@ -7,7 +7,7 @@ project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/ma
 project_blurb: "[Weixin]({{ project_url }}) (WeChat) is an instant messaging, social media, and mobile payment app developed by Tencent."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_blurb_optional_extras_enabled: false
-project_categories: "Games"
+project_categories: "Chat"
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "latest"}
@@ -24,10 +24,6 @@ param_ports:
   - {external_port: "3001", internal_port: "3001", port_desc: "HTTPS Weixin desktop gui."}
 custom_params:
   - {name: "shm-size", name_compose: "shm_size", value: "1gb", desc: "This is needed for websites to function properly."}
-# optional variables
-opt_security_opt_param: true
-opt_security_opt_param_vars:
-  - {run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker."}
 # Selkies blurb settings
 selkies_blurb: true
 show_nvidia: true
