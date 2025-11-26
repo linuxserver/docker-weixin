@@ -1,0 +1,39 @@
+---
+
+# project information
+project_name: weixin
+project_url: "https://weixin.qq.com/"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/weixin-logo.png"
+project_blurb: "[Weixin]({{ project_url }}) (WeChat) is an instant messaging, social media, and mobile payment app developed by Tencent."
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_blurb_optional_extras_enabled: false
+project_categories: "Chat"
+# supported architectures
+available_architectures:
+  - {arch: "{{ arch_x86_64 }}", tag: "latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+# container parameters
+common_param_env_vars_enabled: true
+param_container_name: "{{ project_name }}"
+param_usage_include_vols: true
+param_volumes:
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Users home directory in the container, stores local files and settings"}
+param_usage_include_ports: true
+param_ports:
+  - {external_port: "3000", internal_port: "3000", port_desc: "HTTP Weixin desktop gui, must be proxied."}
+  - {external_port: "3001", internal_port: "3001", port_desc: "HTTPS Weixin desktop gui."}
+custom_params:
+  - {name: "shm-size", name_compose: "shm_size", value: "1gb", desc: "This is needed for websites to function properly."}
+# Selkies blurb settings
+selkies_blurb: true
+show_nvidia: true
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  The application can be accessed at:
+
+  * https://yourhost:3001/
+
+# changelog
+changelogs:
+  - {date: "08.08.25:", desc: "Initial release."}
