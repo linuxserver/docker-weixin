@@ -863,7 +863,7 @@ libuchardet0                                                                  0.
 libudev1                                                                      257.9-1~deb13u1                         deb                         
 libudfread0                                                                   1.1.2-1+b2                              deb                         
 libudisks2-0                                                                  2.10.1-12.1+deb13u1                     deb                         
-libunbound8                                                                   1.22.0-2                                deb                         
+libunbound8                                                                   1.22.0-2+deb13u1                        deb                         
 libunistring5                                                                 1.3-2                                   deb                         
 libunwind8                                                                    1.8.1-0.1                               deb                         
 libutempter0                                                                  1.2.1-4                                 deb                         
