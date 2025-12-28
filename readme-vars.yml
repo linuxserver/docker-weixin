@@ -105,4 +105,5 @@ init_diagram: |
   "weixin:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "28.12.25:", desc: "Add Wayland init logic."}
   - {date: "08.08.25:", desc: "Initial release."}
