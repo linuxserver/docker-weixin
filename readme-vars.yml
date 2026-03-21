@@ -105,5 +105,6 @@ init_diagram: |
   "weixin:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "21.03.26:", desc: "Use Wayland ozone platform fixes scaling and acceleration."}
   - {date: "28.12.25:", desc: "Add Wayland init logic."}
   - {date: "08.08.25:", desc: "Initial release."}
