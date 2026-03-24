@@ -3,6 +3,6 @@
 <menu id="root-menu" label="MENU">
 <item label="foot" icon="/usr/share/icons/hicolor/48x48/apps/foot.png"><action name="Execute"><command>/usr/bin/foot</command></action></item>
 <item label="Chromium" icon="/usr/share/icons/hicolor/48x48/apps/chromium.png"><action name="Execute"><command>/usr/bin/chromium</command></action></item>
-<item label="Weixin" icon="/usr/share/icons/hicolor/48x48/apps/wechat.png"><action name="Execute"><command>/usr/bin/wechat</command></action></item>
+<item label="Weixin" icon="/usr/share/icons/hicolor/48x48/apps/wechat.png"><action name="Execute"><command>/usr/bin/wechat --ozone-platform=wayland</command></action></item>
 </menu>
 </openbox_menu>
