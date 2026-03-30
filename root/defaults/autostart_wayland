@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 if [ ! -f "${HOME}/Desktop/wechat.desktop" ]; then
   cp /usr/share/applications/wechat.desktop "${HOME}/Desktop/"
   cp /usr/share/applications/chromium.desktop "${HOME}/Desktop/"
