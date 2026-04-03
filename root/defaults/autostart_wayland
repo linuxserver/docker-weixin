@@ -1,3 +1,14 @@
 #!/bin/bash
 
+if [ ! -f "${HOME}/Desktop/wechat.desktop" ]; then
+  cp /usr/share/applications/wechat.desktop "${HOME}/Desktop/"
+  cp /usr/share/applications/chromium.desktop "${HOME}/Desktop/"
+fi
+
+touch "${HOME}/.config/panel-reload"
+
+gio mime x-scheme-handler/http chromium.desktop
+gio mime x-scheme-handler/https chromium.desktop
+gio mime application/x-terminal-emulator foot.desktop
+
 wechat --ozone-platform=wayland

@@ -8,7 +8,9 @@ LABEL maintainer="thelamer"
 
 # title
 ENV TITLE=Weixin \
-    NO_FULL=true
+    NO_FULL=true \
+    SELKIES_DESKTOP=true \
+    PIXELFLUX_WAYLAND=true
 
 RUN \
   echo "**** add icon ****" && \
@@ -52,6 +54,20 @@ RUN \
   apt-get clean && \
   rm -rf \
     /tmp/* \
+    /usr/share/applications/caja-computer.desktop \
+    /usr/share/applications/caja.desktop \
+    /usr/share/applications/caja-file-management-properties.desktop \
+    /usr/share/applications/caja-folder-handler.desktop \
+    /usr/share/applications/debian-uxterm.desktop \
+    /usr/share/applications/debian-xterm.desktop \
+    /usr/share/applications/footclient.desktop \
+    /usr/share/applications/foot-server.desktop \
+    /usr/share/applications/mate-about.desktop \
+    /usr/share/applications/mate-color-select.desktop \
+    /usr/share/applications/mate-network-scheme.desktop \
+    /usr/share/applications/st.desktop \
+    /usr/share/applications/tint2conf.desktop \
+    /usr/share/applications/tint2.desktop \
     /var/lib/apt/lists/* \
     /var/tmp/*
 
