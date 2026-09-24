@@ -22,8 +22,7 @@ RUN \
   apt-get install -y --no-install-recommends \
     caja \
     chromium \
-    chromium-l10n \
-    tint2 && \
+    chromium-l10n && \
   echo "**** install weixin ****" && \
   curl -o \
     /tmp/weixin.app -L \
@@ -38,9 +37,6 @@ RUN \
   mv \
     /usr/bin/chromium \
     /usr/bin/chromium-real && \
-  ln -s \
-    /opt/weixin/AppRun \
-    /usr/bin/wechat && \
   cp \
     /opt/weixin/wechat.png \
     /usr/share/icons/hicolor/48x48/apps/ && \
@@ -66,8 +62,6 @@ RUN \
     /usr/share/applications/mate-color-select.desktop \
     /usr/share/applications/mate-network-scheme.desktop \
     /usr/share/applications/st.desktop \
-    /usr/share/applications/tint2conf.desktop \
-    /usr/share/applications/tint2.desktop \
     /var/lib/apt/lists/* \
     /var/tmp/*
 

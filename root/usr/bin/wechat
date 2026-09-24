@@ -1,0 +1,10 @@
+#! /bin/bash
+
+BIN=/opt/weixin/AppRun
+
+# Wayland check
+if [ "${PIXELFLUX_WAYLAND,,}" == "true" ]; then
+  WAYLAND="--ozone-platform=wayland"
+fi
+
+${BIN} ${WAYLAND} "$@"

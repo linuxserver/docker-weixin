@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# default file copies first run
-if [ ! -f $HOME/.config/tint2/tint2rc ]; then
-    mkdir -p $HOME/.config/tint2
-    cp /defaults/tint2rc $HOME/.config/tint2/tint2rc
+if [ ! -f "${HOME}/Desktop/wechat.desktop" ]; then
+  cp /usr/share/applications/wechat.desktop "${HOME}/Desktop/"
+  cp /usr/share/applications/chromium.desktop "${HOME}/Desktop/"
 fi
 
-# Run weixin
-tint2 &
+touch "${HOME}/.config/panel-reload"
+
+gio mime x-scheme-handler/http chromium.desktop
+gio mime x-scheme-handler/https chromium.desktop
+
 wechat
