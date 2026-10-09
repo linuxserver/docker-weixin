@@ -33,6 +33,7 @@ RUN \
   mv \
     squashfs-root \
     /opt/weixin && \
+  find /opt/weixin -type d -exec chmod 755 {} + && \
   echo "**** application tweaks ****" && \
   mv \
     /usr/bin/chromium \
