@@ -1,6 +1,7 @@
 #! /bin/bash
 
-BIN=/opt/weixin/AppRun
+BIN=/opt/weixin/wechat
+export APPDIR=/opt/weixin
 
 # Wayland check
 if [ "${PIXELFLUX_WAYLAND,,}" == "true" ]; then

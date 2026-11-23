@@ -106,6 +106,7 @@ init_diagram: |
   "weixin:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "22.11.26:", desc: "Install WeChat payload directly at build time, run WeChatAppEx without sandbox."}
   - {date: "29.03.26:", desc: "Make Wayland default disable with PIXELFLUX_WAYLAND=false."}
   - {date: "21.03.26:", desc: "Use Wayland ozone platform fixes scaling and acceleration."}
   - {date: "28.12.25:", desc: "Add Wayland init logic."}

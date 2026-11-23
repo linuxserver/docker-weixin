@@ -357,6 +357,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **22.11.26:** - Install WeChat payload directly at build time, run WeChatAppEx without sandbox.
 * **29.03.26:** - Make Wayland default disable with PIXELFLUX_WAYLAND=false.
 * **21.03.26:** - Use Wayland ozone platform fixes scaling and acceleration.
 * **28.12.25:** - Add Wayland init logic.

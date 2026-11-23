@@ -30,19 +30,23 @@ RUN \
   cd /tmp && \
   chmod +x weixin.app && \
   ./weixin.app --appimage-extract && \
-  mv \
-    squashfs-root \
+  mkdir -p /opt/weixin && \
+  tar xf \
+    /tmp/squashfs-root/wechat-payload.tar -C \
     /opt/weixin && \
   find /opt/weixin -type d -exec chmod 755 {} + && \
   echo "**** application tweaks ****" && \
   mv \
     /usr/bin/chromium \
     /usr/bin/chromium-real && \
+  mv \
+    /opt/weixin/RadiumWMPF/runtime/WeChatAppEx \
+    /opt/weixin/RadiumWMPF/runtime/WeChatAppEx-real && \
   cp \
-    /opt/weixin/wechat.png \
+    /tmp/squashfs-root/wechat.png \
     /usr/share/icons/hicolor/48x48/apps/ && \
   cp \
-    /opt/weixin/wechat.desktop \
+    /tmp/squashfs-root/wechat.desktop \
     /usr/share/applications/ && \
   sed -i \
     's/AppRun/wechat/g' \
